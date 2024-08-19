@@ -1,0 +1,268 @@
+:root {
+  --red: hsl(14, 86%, 42%);
+  --green: hsl(159, 69%, 38%);
+  --rose-50: hsl(20, 50%, 98%);
+  --rose-100: hsl(13, 31%, 94%);
+  --rose-300: hsl(14, 25%, 72%);
+  --rose-400: hsl(7, 20%, 60%);
+  --rose-500: hsl(12, 20%, 44%);
+  --rose-900: hsl(14, 65%, 9%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 400px);
+  gap: 2rem;
+  padding: 4rem 7rem;
+  background: var(--rose-50);
+}
+
+@media (max-width: 850px) {
+  main {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+}
+
+#products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 2rem;
+}
+
+.product > img {
+  border-radius: 0.5rem;
+}
+
+.product > button {
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 2rem;
+  padding: 0.6rem 0;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0 auto;
+  transform: translateY(-50%);
+}
+
+.product > button > span {
+  color: white;
+}
+
+button.cart-button {
+  background-color: white;
+  border: 1px solid var(--rose-500);
+  color: var(--rose-900);
+  justify-content: center;
+  cursor: pointer;
+}
+
+button.amount-button {
+  justify-content: space-around;
+  background-color: var(--red);
+  color: white;
+  border: 1px solid var(--red);
+  cursor: default;
+}
+
+button.amount-button img {
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.product .category {
+  color: var(--rose-500);
+}
+
+.name {
+  color: var(--rose-900);
+  font-weight: bold;
+  margin-block: 0.25rem;
+}
+
+.product .price {
+  color: var(--red);
+  font-weight: 700;
+}
+
+#cart {
+  height: fit-content;
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+#cart > h1 {
+  text-align: left;
+  color: var(--red);
+  margin-bottom: 1.5rem;
+}
+
+#cart .empty-image {
+  padding-block: 2rem;
+}
+
+#cart > p {
+  color: var(--rose-500);
+  font-weight: 600;
+}
+
+#cart .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#cart .item > img {
+  border: 1px solid var(--rose-400);
+  border-radius: 50%;
+  padding: 2px;
+  cursor: pointer;
+}
+
+#cart .item .item-info > p {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+#cart .item .item-info .price-info {
+  color: var(--rose-900);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.amount {
+  color: var(--red);
+  font-weight: 600;
+}
+
+.unit-price {
+  color: var(--rose-400);
+}
+
+#cart .price {
+  font-weight: 600;
+  color: var(--rose-500);
+}
+
+hr {
+  background-color: var(--rose-100);
+  height: 1px;
+  border: 0;
+  margin-block: 1rem;
+}
+
+.order-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1.total {
+  color: var(--rose-900);
+}
+
+#cart .delevery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--rose-50);
+  padding-block: 1rem;
+  margin-block: 1rem;
+  border-radius: 0.25rem;
+}
+
+#cart button.confirm,
+.start-new {
+  background-color: var(--red);
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  width: 100%;
+  padding-block: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.confirmation {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: start center;
+  padding-top: 5rem;
+}
+
+.confirmation .confirmation-form {
+  background-color: white;
+  width: 30rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+@media (max-width: 30rem) {
+  .confirmation .confirmation-form {
+    width: 100%;
+  }
+}
+
+.confirmation-form > p {
+  color: var(--rose-400);
+  margin-bottom: 2rem;
+}
+
+.confirmation-form > h1 {
+  color: var(--rose-900);
+}
+
+.confirmation-form .order {
+  background-color: var(--rose-50);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.confirmation-form .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.confirmation-form .item .item-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.confirmation-form .item .item-info img {
+  width: 4rem;
+  border-radius: 5px;
+}
+
+.confirmation-form .item .price {
+  font-weight: bold;
+  color: var(--rose-900);
+}
