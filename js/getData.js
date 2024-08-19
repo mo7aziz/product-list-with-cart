@@ -1,4 +1,4 @@
-const API = "../data.json";
+const API = "./data.json";
 async function getData() {
   try {
     let res = await fetch(API);
