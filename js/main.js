@@ -208,7 +208,7 @@ function toggleToAmountButton(button, id) {
 function toggleToCartButton(button) {
   button.innerHTML = "";
   button.textContent = "Add To Cart";
-  button.appendChild(createImage("../images/icon-add-to-cart.svg"));
+  button.appendChild(createImage("./images/icon-add-to-cart.svg"));
   button.classList.remove("amount-button");
   button.classList.add("cart-button");
 }
